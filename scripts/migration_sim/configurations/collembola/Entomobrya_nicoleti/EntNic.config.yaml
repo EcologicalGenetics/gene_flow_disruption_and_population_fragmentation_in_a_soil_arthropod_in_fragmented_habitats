@@ -1,0 +1,131 @@
+# For making migration rate estimation
+# Tag identifying file association.
+TAG: anneaa:EcoGenetics,population_genetics,DiversityEstimates:workflowconfiguration
+# The name of the relevant project account.
+account: EcoGenetics
+# Taxonomic group
+taxonomic_group: Collembola
+# Name of species being analyzed
+species_name: Entomobrya nicoleti
+# # Directory for final output files. (If left empty, output file will be placed within 'working_directory_path')
+  # this is where new fst/taxonomy or pi/taxonomy directories with outputs will be placed
+output_directory_path: /home/anneaa/EcoGenetics/people/anneaa/derived_dat_scripts/neutral_diversity_pipeline/Entomobrya_nicoleti
+  # /faststorage/project/EcoGenetics/general_workflow_outputs/population_genetics
+# Directory for intermediary files.
+working_directory_path: /home/anneaa/EcoGenetics/people/anneaa/derived_dat_scripts/neutral_diversity_pipeline/
+  #/faststorage/project/EcoGenetics/people/Jeppe_Bayer/population_genetics/steps
+# Maximum amount of generations back in time, where the migration divide should be estimated
+max_generations_migration_divide: 14000
+# Minimum amount of generations back in time, where the migration divide should be estimated
+min_generations_migration_divide: 100
+# interval between estimations (step size)
+generations_interval: 100
+# VCF file (combined for all pops)
+vcf_file: /home/anneaa/EcoGenetics/people/Jesper_Bechsgaard/jb_2dsfs/data/EntNic.vcf
+# /faststorage/project/EcoGenetics/people/jilong/jb_2dsfs/data/EntNic.vcf
+# /home/anneaa/EcoGenetics/people/Jesper_Bechsgaard/jb_2dsfs/data/EntNic.vcf
+
+# list of populations to analyse (whole names as strings, iuncluding species abbreviation) (if you later want to exclude them, either remove from this list or add to exclude list below)
+pops_INCLUDE_list:
+  - EntNic_aaRJ-C225
+  - EntNic_aeRoe-C36
+  - EntNic_BIJ-C30
+  - EntNic_BJJ-C34
+  - EntNic_BRS-C268
+  - EntNic_DoeJ-C27
+  - EntNic_DSJ-C190
+  - EntNic_FHJ-C38
+  - EntNic_FUR-C230
+  - EntNic_GEJ-C42
+  - EntNic_GoeJ-C19
+  - EntNic_GSJ-C274
+  - EntNic_GUS-C41
+  - EntNic_HHJ-C162
+  - EntNic_JEJ-C119
+  - EntNic_JHJ-C220
+  - EntNic_JoeJ-C252
+  - EntNic_KLJ-C127
+  - EntNic_KoeJ-C212
+  - EntNic_LEJ-C64
+  - EntNic_LVJ-C76
+  - EntNic_MSJ-C2
+  - EntNic_NOJ-C37
+  - EntNic_RYJ-C139
+  - EntNic_SBJ-C52
+  - EntNic_SHJ-C48
+  - EntNic_SKJ-C16
+  - EntNic_SKJ-C216
+  - EntNic_STF-C266
+  - EntNic_ULJ-C122
+  - EntNic_ULJ-C60
+  - EntNic_UTJ-C22
+  - EntNic_VAJ-C24
+
+# list of populations to exclude from analysis (whole names as strings, iuncluding species abbreviation)
+pops_exclude_list:
+  - EntNic_JEJ-C119
+  - EntNic_KoeJ-C212
+  - EntNic_VAJ-C24
+  - EntNic_HHJ-C162
+  - EntNic_SBJ-C52
+  - EntNic_LVJ-C76
+  - EntNic_ULJ-C122
+  - EntNic_SKJ-C16
+
+# list of population COMPARISONS to exclude from analysis (whole names divided by ., e.g. EntNic_aaRJ_C225.EntNic_aaRJ_C225)
+  # e.g. due to too short split time?
+  # OBS; not implemented yet
+pop_pairs_exclude_list:
+  - 
+
+
+## Under development
+  # make 2d sfs, potentially based on Jilongs gwf workflow
+  # I wrote it as a gwf workflow in /home/jilong/EcoGenetics/people/jilong/jb_2dsfs/scripts/workflow.py
+    #Here is a step-by-step process
+    # 1: copy the whole folder /home/jilong/EcoGenetics/people/jilong/jb_2dsfs
+    # 2: change the root_path setting in workflow.py , which should be YOUR_PATH/jb_2dsfs
+    # 3: cd YOUR_PATH/jb_2dsfs/scripts 
+    # 4: gwf config set backend slurm (only for the first time usage of gwf in this folder)
+    # 5: gwf run , if this workflow runs for the first time, this will only submit the data_prepare job
+    # 6: gwf run , run this workflow again after data preparation, 2dsfs will be done for each pair.
+    
+  # It's not fully automated yet in some sense because I induce a "data_prepare" step which generates a tab split txt file containing all the contrasting pairs first for the input vcf. Then you can run all pairs automatically.Basically, the script needs to be run twice. (edited) 
+  # All the results for the 2dsfs are in the folder /home/jilong/EcoGenetics/people/jilong/jb_2dsfs/steps/2dsfs/{pair_id}
+  # I am not sure if you want the student to run the script as a practice for oneself or just use the results.
+  # The script assumes a single vcf input containing multiple populations, which can easily take any other vcf file, generate the list of pairs (first time running) and run 2dsfs for each pair (second time running). (edited) 
+
+
+
+# data are within this project folder:
+# /faststorage/project/EcoGenetics/people/Jesper_Bechsgaard/jb_2dsfs/
+
+
+
+
+
+
+
+
+
+
+# Path to reference genome file in FASTA format
+reference_genome_path: /home/anneaa/EcoGenetics/BACKUP/population_genetics/reference_genomes/collembola/Entomobrya_nicoleti/gene_flow_disruption/EG_EntNic_19022024_genomic.fna
+
+
+# collection sites and gps locations
+collection_sites_file: /home/anneaa/EcoGenetics/general_workflows/population_genetics/fst/coordinates.tsv
+### OBS
+
+# Make neutral VCF settings: (intergenic and rm repetitive)
+annotation_gtf: /home/anneaa/EcoGenetics/BACKUP/population_genetics/reference_genomes/collembola/Entomobrya_nicoleti/gene_flow_disruption/annotation/EG_EntNic_19022024_genomic.gtf
+# Bed file path
+bed_files_path: /home/anneaa/EcoGenetics/BACKUP/population_genetics/reference_genomes/collembola/Entomobrya_nicoleti/gene_flow_disruption/annotation
+# VCF folders
+vcf_base_folder: /home/anneaa/EcoGenetics/general_workflow_outputs/population_genetics/vcf
+# vcf tip folders
+vcf_base_folder: /home/anneaa/EcoGenetics/general_workflow_outputs/population_genetics/vcf/collembola/Entomobrya_nicoleti/grassland
+# VCF filter settings? (threshold depth per pop or across pops, or across 70% of pops?)
+# count of positions for calculating pi (only variants are called, thus we need a count of all sites, to calculate pi)
+count_of_positions_file: /home/anneaa/EcoGenetics/general_workflow_outputs/population_genetics/pi/collembola/Entomobrya_nicoleti/test.txt
+

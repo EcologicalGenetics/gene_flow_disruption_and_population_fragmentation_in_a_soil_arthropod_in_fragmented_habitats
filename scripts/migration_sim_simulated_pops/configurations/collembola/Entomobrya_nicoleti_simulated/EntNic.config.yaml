@@ -1,0 +1,39 @@
+# For making migration rate estimation
+# Tag identifying file association.
+TAG: anneaa:EcoGenetics,population_genetics,DiversityEstimates:workflowconfiguration
+# The name of the relevant project account.
+account: EcoGenetics
+# Taxonomic group
+taxonomic_group: Collembola
+# Name of species being analyzed
+species_name: Entomobrya nicoleti
+# # Directory for final output files. (If left empty, output file will be placed within 'working_directory_path')
+  # this is where new fst/taxonomy or pi/taxonomy directories with outputs will be placed
+#output_directory_path: /home/anneaa/EcoGenetics/people/anneaa/derived_dat_scripts/neutral_diversity_pipeline/Entomobrya_nicoleti
+  # /faststorage/project/EcoGenetics/general_workflow_outputs/population_genetics
+# Directory for intermediary files.
+working_directory_path: /home/anneaa/EcoGenetics/people/anneaa/derived_dat_scripts/neutral_diversity_pipeline/
+  #/faststorage/project/EcoGenetics/people/Jeppe_Bayer/population_genetics/steps
+# Maximum amount of generations back in time, where the migration divide should be estimated
+max_generations_migration_divide: 14000
+# Minimum amount of generations back in time, where the migration divide should be estimated
+min_generations_migration_divide: 100
+# interval between estimations (step size)
+generations_interval: 100
+# VCF file (combined for all pops)
+vcf_file: /home/anneaa/EcoGenetics/people/Jesper_Bechsgaard/jb_2dsfs/data/EntNic.vcf
+# /faststorage/project/EcoGenetics/people/jilong/jb_2dsfs/data/EntNic.vcf
+# /home/anneaa/EcoGenetics/people/Jesper_Bechsgaard/jb_2dsfs/data/EntNic.vcf
+# sshort describer for directory and file naming ( must be in similar order as the sfs-list below )
+simulation_desriber_list: 
+  - constant_migration
+  - decreasing_migration
+  - no_migration
+
+# list of populations to analyse (whole names as strings, iuncluding species abbreviation) (if you later want to exclude them, either remove from this list or add to exclude list below)
+SFS_file_list:
+  #- /home/anneaa/EcoGenetics/people/anneaa/derived_dat_scripts/neutral_diversity_pipeline/migration_sim/Collembola/Entomobrya_nicoleti/fsc/simulated_SFS/simulated_mig_decrease/pop1_pop2_sfs2d_jointMAFpop1_0.obs
+  - /faststorage/project/EcoGenetics/people/Jesper_Bechsgaard/Entomobrya_nicoleti_paper1/scripts/fastsimcoal/simultions/2_pops_decreasingM/pop1_pop2_sfs2d_constant_migration/pop1_pop2_sfs2d_constant_migration_jointMAFpop1_0.obs
+  - /faststorage/project/EcoGenetics/people/Jesper_Bechsgaard/Entomobrya_nicoleti_paper1/scripts/fastsimcoal/simultions/2_pops_decreasingM/pop1_pop2_sfs2d_decreasing_migration/pop1_pop2_sfs2d_decreasing_migration_jointMAFpop1_0.obs
+  - /faststorage/project/EcoGenetics/people/Jesper_Bechsgaard/Entomobrya_nicoleti_paper1/scripts/fastsimcoal/simultions/2_pops_decreasingM/pop1_pop2_sfs2d_no_migration/pop1_pop2_sfs2d_no_migration_jointMAFpop1_0.obs
+

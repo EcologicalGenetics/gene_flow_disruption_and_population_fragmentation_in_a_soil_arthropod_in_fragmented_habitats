@@ -1,0 +1,6 @@
+data/
+results/
+steps/
+logs/
+__pycache__/
+.gwf/
