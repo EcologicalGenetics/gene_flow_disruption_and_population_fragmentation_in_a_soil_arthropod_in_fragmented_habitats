@@ -1,0 +1,17 @@
+# The name of the relevant project account.
+account: 
+# Name of species being analyzed
+species_name: 
+# Directory for final output files.
+output_directory_path: 
+# Path to PacBio sequence file.
+pacbio_hifi_sequence_file:
+# Use Hi-C data during assembly? (1 = Yes/2 = No/3 = Both).
+use_hic_data:
+# List of Hi-C sequence files if avalable (optional).
+hic_sequence_files:
+- 
+# Name of BUSCO lineage dataset to use for analysis.
+busco_dataset_name: 
+# Number of purge_dups rounds.
+purge_dups_rounds: 

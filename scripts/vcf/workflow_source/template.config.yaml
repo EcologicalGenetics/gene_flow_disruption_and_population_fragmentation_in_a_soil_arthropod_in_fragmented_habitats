@@ -1,0 +1,8 @@
+# The name of the relevant project account.
+account: 
+# Name of species being analyzed
+species_name: 
+# Directory for intermediary files.
+working_directory_path: 
+# Directory for final output files.
+output_directory_path: 

@@ -1,0 +1,14 @@
+# The name of the relevant project account.
+account: EcoGenetics
+# Name of species being analyzed
+species_name: Entomobrya nicoleti
+# Alternative name of created folder (To be used if something deviating from the automatically generated name is desired)
+alternative_folder_name:
+# Genome assembly files to be masked
+genome_assembly: /faststorage/project/EcoGenetics/people/Jeppe_Bayer/genome_assembly_and_annotation/steps/collembola/Entomobrya_nicoleti/HiC_scaffolding/juicer/3ddna_in10000_r6/finalize/purged_HiC.bundled.fasta
+# Repetitive region database file:
+repeat_database: /faststorage/project/EcoGenetics/databases/RepBase/RepBaseCustom15.02.fasta/Arthropoda.rep
+# Directory for intermediary files.
+working_directory_path: /faststorage/project/EcoGenetics/people/Jeppe_Bayer/genome_assembly_and_annotation/steps/collembola
+# Directory for final output files.
+output_directory_path: /faststorage/project/EcoGenetics/people/Jeppe_Bayer/genome_assembly_and_annotation/steps/collembola

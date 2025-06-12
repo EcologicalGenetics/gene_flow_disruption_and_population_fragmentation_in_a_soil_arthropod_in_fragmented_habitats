@@ -1,0 +1,12 @@
+# The name of the relevant project account.
+account: 
+# Name of species being analyzed
+species_name: 
+# Genome assembly files to be masked
+genome_assembly:
+# Repetitive region database file:
+repeat_database:
+# Directory for intermediary files.
+working_directory_path: 
+# Directory for final output files.
+output_directory_path: 

@@ -1,0 +1,16 @@
+# The name of the relevant project account.
+account: 
+# Name of species being analyzed
+species_name: 
+# List of path to Hi-C sequence files.
+hic_sequence_files:
+- 
+# Path to draft genome file.
+draft_genome_file: 
+# Directory for final output files.
+output_directory_path: 
+# 3D-DNA settings.
+input_size:  # (Default 15000)
+number_of_edit_rounds:  # (Default 2)
+# Reviewed .assembly file generated from JuiceBox (can be left blank until a reviewed file has been produced).
+reviewed_assembly_file: 

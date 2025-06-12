@@ -1,0 +1,25 @@
+# The name of the relevant project account.
+account: EcoGenetics
+# Name of species being analyzed
+species_name: Entomobrya nicoleti
+# Alternative name of created folder (To be used if something deviating from the automatically generated name is desired)
+alternative_folder_name: 
+# Path to genome assembly file.
+genome_assembly_file: /faststorage/project/EcoGenetics/people/Jeppe_Bayer/genome_assembly_and_annotation/steps/collembola/Entomobrya_nicoleti/repeatmasking/EntNic.softmasked.fna
+# Directory for final output files.
+output_directory_path: /faststorage/project/EcoGenetics/people/Jeppe_Bayer/genome_assembly_and_annotation/steps/collembola
+# Name of BUSCO lineage dataset to use for analysis.
+busco_dataset_name: arthropoda_odb10
+# Use only RNA data (1), use use only protein database file (2), or both RNA data and protein database (3). (1 | 2 | 3).
+braker_setting: 2
+# 0 & 1: List of path to RNA sequence files (read 1 & read 2).
+rna_sequence_files:
+- /faststorage/project/EcoGenetics/BACKUP/genome_assembly_and_annotation/rna/Entomobrya_nicoleti/ENTNIC_RNA_RDJ_1.fq.gz
+- /faststorage/project/EcoGenetics/BACKUP/genome_assembly_and_annotation/rna/Entomobrya_nicoleti/ENTNIC_RNA_RDJ_2.fq.gz
+# 1 & 2: Path to protein database file in FASTA format.
+protein_database_file: /faststorage/project/EcoGenetics/people/Jeppe_Bayer/genome_assembly_and_annotation/steps/collembola/proteinDB/GCA_001718145.1_ASM171814v1_genomic.protein.fasta
+# Alternative if desired database does not exist.
+# 1 & 2: Make protein database file from genome and annotation file.
+referene_genome_file: 
+gtf_genome_annotation_file: 
+

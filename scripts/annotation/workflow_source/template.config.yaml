@@ -1,0 +1,13 @@
+# The name of the relevant project account.
+account: 
+# Name of species being analyzed
+species_name: 
+# Path to genome assembly file.
+genome_assembly_file:
+# List of path to RNA sequence files (read 1 & read 2)
+rna_sequence_files:
+- 
+# Path to protein database file in FASTA format.
+protein_database_file: 
+# Directory for final output files.
+output_directory_path: 
